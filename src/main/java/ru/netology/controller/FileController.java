@@ -31,8 +31,6 @@ public class FileController {
     public ResponseEntity<?> uploadFile(@RequestHeader("auth-token") String token,
                                         @RequestParam("file") MultipartFile file,
                                         @RequestParam("filename") String filename) {
-        System.out.println("DEBUG: file = " + (file != null ? file.getOriginalFilename() : "null"));
-        System.out.println("DEBUG: filename = " + filename);
         try {
             var user = authService.getUserByToken(token);
             fileService.uploadFile(user, file, filename);

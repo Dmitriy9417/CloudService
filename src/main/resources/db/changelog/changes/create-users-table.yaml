@@ -1,6 +1,6 @@
 databaseChangeLog:
   - changeSet:
-      id: create-users-table
+      id: 1
       author: Dimi_rub
       preConditions:
         - onFail: MARK_RAN
@@ -32,3 +32,5 @@ databaseChangeLog:
               - column:
                   name: auth_token
                   type: VARCHAR(255)
+                  constraints:
+                    nullable: true

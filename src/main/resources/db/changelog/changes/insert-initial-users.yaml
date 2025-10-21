@@ -12,9 +12,6 @@ databaseChangeLog:
               - column:
                   name: password
                   value: admin123
-              - column:
-                  name: auth_token
-                  value: token-admin-123
         - insert:
             tableName: users
             columns:
@@ -24,9 +21,6 @@ databaseChangeLog:
               - column:
                   name: password
                   value: user123
-              - column:
-                  name: auth_token
-                  value: token-user1-456
         - insert:
             tableName: users
             columns:
@@ -36,6 +30,3 @@ databaseChangeLog:
               - column:
                   name: password
                   value: test123
-              - column:
-                  name: auth_token
-                  value: token-test-789
