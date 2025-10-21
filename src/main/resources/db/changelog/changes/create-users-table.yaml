@@ -1,0 +1,34 @@
+databaseChangeLog:
+  - changeSet:
+      id: create-users-table
+      author: Dimi_rub
+      preConditions:
+        - onFail: MARK_RAN
+        - not:
+            tableExists:
+              tableName: users
+      changes:
+        - createTable:
+            tableName: users
+            columns:
+              - column:
+                  name: id
+                  type: BIGINT
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: login
+                  type: VARCHAR(255)
+                  constraints:
+                    nullable: false
+                    unique: true
+              - column:
+                  name: password
+                  type: VARCHAR(255)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: auth_token
+                  type: VARCHAR(255)

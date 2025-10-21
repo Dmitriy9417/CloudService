@@ -1,0 +1,41 @@
+databaseChangeLog:
+  - changeSet:
+      id: 3
+      author: Dimi_rub
+      changes:
+        - insert:
+            tableName: users
+            columns:
+              - column:
+                  name: login
+                  value: admin@admin.ru
+              - column:
+                  name: password
+                  value: admin123
+              - column:
+                  name: auth_token
+                  value: token-admin-123
+        - insert:
+            tableName: users
+            columns:
+              - column:
+                  name: login
+                  value: user1@example.com
+              - column:
+                  name: password
+                  value: user123
+              - column:
+                  name: auth_token
+                  value: token-user1-456
+        - insert:
+            tableName: users
+            columns:
+              - column:
+                  name: login
+                  value: test@test.ru
+              - column:
+                  name: password
+                  value: test123
+              - column:
+                  name: auth_token
+                  value: token-test-789

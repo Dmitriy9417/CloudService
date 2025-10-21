@@ -1,0 +1,38 @@
+databaseChangeLog:
+  - changeSet:
+      id: 2
+      author: Dimi_rub
+      preConditions:
+        - onFail: MARK_RAN
+        - not:
+            tableExists:
+              tableName: files
+      changes:
+        - createTable:
+            tableName: files
+            columns:
+              - column:
+                  name: id
+                  type: bigint
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: filename
+                  type: varchar(255)
+              - column:
+                  name: size
+                  type: bigint
+              - column:
+                  name: user_id
+                  type: bigint
+                  constraints:
+                    nullable: false
+        - addForeignKeyConstraint:
+            baseTableName: files
+            baseColumnNames: user_id
+            constraintName: fk_files_user
+            referencedTableName: users
+            referencedColumnNames: id
+            onDelete: CASCADE
